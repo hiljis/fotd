@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { capFirst } from '../../../utils/format';
 import './MonthSlider.scss';
 
 type Props = {
@@ -13,7 +14,7 @@ const MonthSlider: React.FC<Props> = ({ month }) => {
 
 	return (
 		<div className="monthSlider">
-			<h1 className="monthSlider__currentMonth">{currentMonth}</h1>
+			<h1 className="monthSlider__currentMonth">{capFirst(currentMonth ? currentMonth : '-')}</h1>
 		</div>
 	);
 };
