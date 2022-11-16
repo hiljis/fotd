@@ -1,0 +1,57 @@
+.header {
+	position: fixed;
+	height: 9rem;
+	width: 100%;
+	border-bottom: 1px solid var(--c-dark);
+	background-color: var(--c-white);
+	display: flex;
+	align-items: flex-end;
+	z-index: 10;
+
+	transition: top 0.8s;
+
+	&__content {
+		height: 5rem;
+		width: 100%;
+		margin: 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&.collapse {
+		top: -10rem;
+	}
+
+	&.expand {
+		top: 0;
+	}
+
+	&--left {
+		text-align: left;
+
+		.fotd__textLogo {
+			font-size: 2.4rem;
+			font-weight: 700;
+			font-size: normal;
+			line-height: 100%;
+			color: var(--c-dark);
+		}
+	}
+
+	&--right {
+		text-align: right;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+
+		.header__year {
+			font-size: 1.6rem;
+			font-weight: 600;
+			font-size: normal;
+			line-height: 100%;
+			color: var(--c-dark);
+		}
+	}
+}
