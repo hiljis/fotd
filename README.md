@@ -9,3 +9,6 @@ DB / Rest API: Wordpress
 Frontend state: Redux
 Unit tests: Jest
 Authentication: Firebase (Email / Password)
+
+UI Design: Figma
+https://www.figma.com/file/j7Vwdob3Sq7NOHe0EIVh3P/Untitled?node-id=52%3A2128
