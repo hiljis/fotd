@@ -1,0 +1,43 @@
+@keyframes showImage {
+	to {
+		opacity: 1;
+	}
+}
+@keyframes slowScale {
+	to {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.displayImage__container {
+	position: relative;
+	width: 100%;
+	flex-grow: 1;
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	overflow: hidden;
+	animation: showImage 0.4s 1.2s linear forwards;
+
+	// display: flex;
+	z-index: 8;
+}
+
+.displayImage {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.2);
+	height: 100%;
+	min-height: 50rem;
+	animation: slowScale 0.8s 1.2s ease-out forwards;
+}
+
+.dTBox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 192, 203, 0.7);
+}

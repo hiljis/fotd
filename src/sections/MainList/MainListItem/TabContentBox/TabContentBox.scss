@@ -1,0 +1,11 @@
+.tabContentBox {
+	position: relative;
+	width: 100%;
+	height: 4rem;
+	transition: height 0.8s ease-out;
+
+	&.active {
+		height: min-content;
+		height: 60rem;
+	}
+}

@@ -1,0 +1,11 @@
+.monthSlider {
+	&__currentMonth {
+		font-size: 2.4rem;
+		font-weight: 600;
+		font-size: normal;
+		line-height: 100%;
+		-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: var(--c-dark);
+	}
+}
