@@ -1,0 +1,45 @@
+.navItem {
+	background-color: var(--c-white);
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 1.6rem;
+	color: var(--c-dark);
+	cursor: pointer;
+
+	&.info:hover,
+	&.info.active {
+		background-color: var(--c-info);
+	}
+
+	&.creator:hover,
+	&.creator.active {
+		background-color: var(--c-dark--light);
+		path {
+			fill: var(--c-white);
+		}
+	}
+
+	&.nft:hover,
+	&.nft.active {
+		background-color: var(--c-nft);
+	}
+
+	&.vote:hover,
+	&.vote.active {
+		background-color: var(--c-dark--light);
+		path {
+			fill: var(--c-white);
+		}
+	}
+
+	&.comment:hover,
+	&.comment.active {
+		background-color: var(--c-dark--light);
+		path {
+			fill: var(--c-white);
+		}
+	}
+}

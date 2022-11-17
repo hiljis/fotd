@@ -1,0 +1,16 @@
+.expandContent {
+	width: 100%;
+	// flex-grow: 1;
+	height: 0;
+	z-index: 8;
+	background-color: var(--c-light);
+	font-size: 5rem;
+	color: white;
+	overflow: hidden;
+
+	display: none;
+	flex-direction: column;
+	justify-content: flex-end;
+	visibility: hidden;
+	position: relative;
+}

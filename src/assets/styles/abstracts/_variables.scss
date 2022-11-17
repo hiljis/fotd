@@ -1,7 +1,12 @@
 :root {
 	--c-dark: rgb(14, 14, 14);
-	--c-light: rgb(246, 246, 246);
+	--c-dark--light: #343434;
+	--c-light: rgb(237, 237, 237);
+	// --c-light: rgb(246, 246, 246);
 	--c-white: rgb(255, 255, 255);
+	--c-black: rgb(0, 0, 0);
+	--c-info: rgb(176, 159, 119);
+	--c-nft: rgb(255, 204, 77);
 
 	--header-height-mobile: 10rem;
 	--listItem-height-mobile: 12rem;

@@ -4,6 +4,7 @@ import { Month } from '../../../utils/convert';
 import { testData } from './testData';
 
 export interface ArtPost {
+	name: string;
 	title: string;
 	year: number;
 	month: number;

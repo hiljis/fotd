@@ -1,6 +1,7 @@
 export const testData = [
 	{
-		title: 'Alyssa Carson',
+		title: 'Up & Coming Astronaut',
+		name: 'Alyssa Carson',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -9,7 +10,8 @@ export const testData = [
 		id: 1,
 	},
 	{
-		title: 'Brian Armstrong',
+		title: 'CEO Coinbase',
+		name: 'Brian Armstrong',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -18,7 +20,8 @@ export const testData = [
 		id: 2,
 	},
 	{
-		title: 'Michael Saylor',
+		title: 'CEO MicroStrategy',
+		name: 'Michael Saylor',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -27,7 +30,8 @@ export const testData = [
 		id: 3,
 	},
 	{
-		title: 'Rihanna',
+		title: 'Singer / Entrepeneur',
+		name: 'Rihanna',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -36,7 +40,8 @@ export const testData = [
 		id: 4,
 	},
 	{
-		title: 'Elon Musk',
+		title: 'CEO Tesla',
+		name: 'Elon Musk',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -45,7 +50,8 @@ export const testData = [
 		id: 5,
 	},
 	{
-		title: 'Robyn',
+		title: 'Pop icon / Music Producer',
+		name: 'Robyn',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -54,7 +60,8 @@ export const testData = [
 		id: 6,
 	},
 	{
-		title: 'Henric Hiljanen',
+		title: 'Frontend Developer / FOTD Founder',
+		name: 'Henric Hiljanen',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -63,7 +70,8 @@ export const testData = [
 		id: 7,
 	},
 	{
-		title: 'Maja Gerhardsson',
+		title: 'Award Winning Art Director',
+		name: 'Maja Gerhardsson',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -72,7 +80,8 @@ export const testData = [
 		id: 8,
 	},
 	{
-		title: 'Gary Vee',
+		title: 'NFT Enthusiast / Entrepeneur',
+		name: 'Gary Vee',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -81,7 +90,8 @@ export const testData = [
 		id: 9,
 	},
 	{
-		title: 'Lady Gaga',
+		title: 'Pop icon / Singer',
+		name: 'Lady Gaga',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -90,7 +100,8 @@ export const testData = [
 		id: 10,
 	},
 	{
-		title: 'Vitalik Buterin',
+		title: 'Creator of Ethereum',
+		name: 'Vitalik Buterin',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -99,7 +110,8 @@ export const testData = [
 		id: 11,
 	},
 	{
-		title: 'Avicii',
+		title: 'Master of melodies / Music Producer',
+		name: 'Avicii',
 		imageUrl: '',
 		year: 2022,
 		month: 10,
@@ -108,7 +120,8 @@ export const testData = [
 		id: 12,
 	},
 	{
-		title: 'Alyssa Carson',
+		title: 'Title text',
+		name: 'Alyssa Carson',
 		imageUrl: '',
 		year: 2022,
 		month: 11,
@@ -117,7 +130,8 @@ export const testData = [
 		id: 13,
 	},
 	{
-		title: 'Brian Armstrong',
+		title: 'Title text',
+		name: 'Brian Armstrong',
 		imageUrl: '',
 		year: 2022,
 		month: 11,
@@ -126,7 +140,8 @@ export const testData = [
 		id: 14,
 	},
 	{
-		title: 'Michael Saylor',
+		title: 'Title text',
+		name: 'Michael Saylor',
 		imageUrl: '',
 		year: 2022,
 		month: 11,
@@ -135,7 +150,8 @@ export const testData = [
 		id: 15,
 	},
 	{
-		title: 'Rihanna',
+		title: 'Title text',
+		name: 'Rihanna',
 		imageUrl: '',
 		year: 2022,
 		month: 11,
@@ -144,7 +160,8 @@ export const testData = [
 		id: 16,
 	},
 	{
-		title: 'Elon Musk',
+		title: 'Title text',
+		name: 'Elon Musk',
 		imageUrl: '',
 		year: 2022,
 		month: 11,
@@ -153,7 +170,8 @@ export const testData = [
 		id: 17,
 	},
 	{
-		title: 'Robyn',
+		title: 'Title text',
+		name: 'Robyn',
 		imageUrl: '',
 		year: 2022,
 		month: 11,
@@ -162,7 +180,8 @@ export const testData = [
 		id: 18,
 	},
 	{
-		title: 'Henric Hiljanen',
+		title: 'Title text',
+		name: 'Henric Hiljanen',
 		imageUrl: '',
 		year: 2022,
 		month: 11,
@@ -171,7 +190,8 @@ export const testData = [
 		id: 19,
 	},
 	{
-		title: 'Maja Gerhardsson',
+		title: 'Title text',
+		name: 'Maja Gerhardsson',
 		imageUrl: '',
 		year: 2022,
 		month: 11,
@@ -180,7 +200,8 @@ export const testData = [
 		id: 20,
 	},
 	{
-		title: 'Gary Vee',
+		title: 'Title text',
+		name: 'Gary Vee',
 		imageUrl: '',
 		year: 2023,
 		month: 0,
@@ -189,7 +210,8 @@ export const testData = [
 		id: 21,
 	},
 	{
-		title: 'Lady Gaga',
+		title: 'Title text',
+		name: 'Lady Gaga',
 		imageUrl: '',
 		year: 2023,
 		month: 0,
@@ -198,7 +220,8 @@ export const testData = [
 		id: 22,
 	},
 	{
-		title: 'Vitalik Buterin',
+		title: 'Title text',
+		name: 'Vitalik Buterin',
 		imageUrl: '',
 		year: 2023,
 		month: 0,
@@ -207,7 +230,8 @@ export const testData = [
 		id: 23,
 	},
 	{
-		title: 'Avicii',
+		title: 'Title text',
+		name: 'Avicii',
 		imageUrl: '',
 		year: 2023,
 		month: 0,

@@ -1,0 +1,46 @@
+.icon--white {
+	path {
+		fill: var(--c-white);
+	}
+}
+
+.icon--xs {
+	height: 2.4rem;
+	width: auto;
+}
+
+.icon--sm {
+	height: 3.2rem;
+	width: auto;
+}
+
+.icon--white {
+	path {
+		fill: var(--c-white);
+		stroke: var(--c-white);
+	}
+}
+
+.icon--fillWhite {
+	path {
+		fill: var(--c-white);
+	}
+}
+
+.icon--fillBlack {
+	path {
+		fill: var(--c-black);
+	}
+}
+
+.icon--strokeBlack {
+	path {
+		stroke: var(--c-black);
+	}
+}
+
+.icon--outlined {
+	path {
+		fill: none;
+	}
+}
