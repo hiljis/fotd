@@ -11,42 +11,24 @@ type Props = {
 	item: ArtPost;
 	index: number;
 	parentRef: React.RefObject<HTMLDivElement>;
-	isMonthBreak: boolean;
 	isYearBreak: boolean;
+	isMonthBreak: boolean;
 };
 
-const MainListItem: React.FC<Props> = ({ item, index, parentRef, isMonthBreak, isYearBreak }) => {
+const MainListItem: React.FC<Props> = ({ item, index, parentRef, isYearBreak, isMonthBreak }) => {
 	const activeIndex = useAppSelector(selectActiveIndex);
 	const date = new Date(item.dateISO);
 	const weekday = numToWeekDay(date.getDay())?.slice(0, 3);
 	const monthDay = date.getDate().toString().padStart(2, '0');
 	const ref = useRef<HTMLDivElement>(null);
 	const [top, setTop] = useState(0);
-	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		const itemRef = ref.current;
-		if (isYearBreak || isMonthBreak) {
-			const options = {
-				root: parentRef ? parentRef.current : null,
-				rootMargin: '0px',
-				threshold: 1,
-			};
-
-			const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-				const entry = entries[0];
-				if (entry.isIntersecting) {
-					dispatch(
-						setVisiblePeriod({ month: numToMonth(date.getMonth()) as Month, year: date.getFullYear() })
-					);
-				}
-			}, options);
-
-			if (itemRef) {
-				observer.observe(itemRef);
-				return () => {
-					if (itemRef) observer.unobserve(itemRef);
-				};
+		if (ref && ref.current) {
+			if (isYearBreak || isMonthBreak) {
+				setTop(ref.current?.offsetTop / 10);
+			} else {
+				setTop(ref.current?.offsetTop / 10);
 			}
 		}
 	}, []);
@@ -55,31 +37,44 @@ const MainListItem: React.FC<Props> = ({ item, index, parentRef, isMonthBreak, i
 		if (activeIndex === index && parentRef && parentRef.current) {
 			setTop(parentRef.current!.scrollTop / 10);
 		} else if (ref && ref.current) {
-			setTop(ref.current?.offsetTop / 10);
+			if (isYearBreak || isMonthBreak) {
+				setTop(ref.current?.offsetTop / 10);
+			} else {
+				setTop(ref.current?.offsetTop / 10);
+			}
 		}
 	}, [activeIndex]);
 
 	return (
-		<div ref={ref} className={`staticContainer ${activeIndex === index ? 'active' : ''}`}>
-			<div
-				className={`expandContainer ${activeIndex === index ? 'active' : ''}`}
-				// style={{ top: `${index * 8}rem` }}
-				style={{ top: `${top}rem` }}
-			>
-				<li
-					className={`mainListItem ${activeIndex === index ? 'active' : 'inactive'}`}
-					data-index={index}
-					id={`item-${index}`}
+		<Fragment>
+			{isYearBreak || isMonthBreak ? (
+				<time className="mainListHeader" dateTime={`${item.year}-${item.month}`}>
+					<span>{item.year}</span>
+					<span>{numToMonth(item.month)}</span>
+				</time>
+			) : (
+				''
+			)}
+			<div ref={ref} className={`staticContainer ${activeIndex === index ? 'active' : ''}`}>
+				<div
+					className={`expandContainer ${activeIndex === index ? 'active' : ''}`}
+					style={{ top: `${top}rem` }}
 				>
-					<h1 className="mainListItem__name">{item.name}</h1>
-					<div className="mainListItem__date">
-						<span className="mainListItem__date--weekDay">{weekday}</span>
-						<span className="mainListItem__date--monthDay">{monthDay}</span>
-					</div>
-				</li>
-				<ExpandContent />
+					<li
+						className={`mainListItem ${activeIndex === index ? 'active' : 'inactive'}`}
+						data-index={index}
+						id={`item-${index}`}
+					>
+						<h1 className="mainListItem__name">{item.name}</h1>
+						<div className="mainListItem__date">
+							<span className="mainListItem__date--weekDay">{weekday}</span>
+							<span className="mainListItem__date--monthDay">{monthDay}</span>
+						</div>
+					</li>
+					<ExpandContent />
+				</div>
 			</div>
-		</div>
+		</Fragment>
 	);
 };
 

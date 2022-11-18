@@ -1,0 +1,15 @@
+.text--outlined-1 {
+	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--c-dark);
+}
+
+.text--outlined-2 {
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: var(--c-dark);
+}
+
+.text--outlined-3 {
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: var(--c-dark);
+}

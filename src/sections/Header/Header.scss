@@ -26,32 +26,17 @@
 	&.expand {
 		top: 0;
 	}
+}
 
-	&--left {
-		text-align: left;
-
-		.fotd__textLogo {
-			font-size: 2.4rem;
-			font-weight: 700;
-			font-size: normal;
-			line-height: 100%;
-			color: var(--c-dark);
-		}
-	}
-
-	&--right {
-		text-align: right;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		height: 100%;
-
-		.header__year {
-			font-size: 1.6rem;
-			font-weight: 600;
-			font-size: normal;
-			line-height: 100%;
-			color: var(--c-dark);
-		}
-	}
+.logoBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	border: 1px solid var(--c-dark);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 9rem;
+	width: 9rem;
 }

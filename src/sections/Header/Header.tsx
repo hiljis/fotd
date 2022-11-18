@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { selectActiveIndex, selectVisibleMonth, selectVisibleYear } from '../MainList/store/mainListSlice';
-import './Header.scss';
 import MonthSlider from './MonthSlider/MonthSlider';
+import { ReactComponent as IconLogoF } from '../../assets/icons/IconLogoF.svg';
+import './Header.scss';
 
 type Props = {};
 const Header: React.FC<Props> = ({}) => {
@@ -13,12 +14,10 @@ const Header: React.FC<Props> = ({}) => {
 	return (
 		<header className={`header ${activeIndex !== null ? 'collapse' : 'expand'}`}>
 			<div className="header__content">
-				<div className="header--left">
-					<h3 className="fotd__textLogo">FOTD</h3>
-				</div>
-				<div className="header--right">
-					<h3 className="header__year">{visibleYear}</h3>
-					<MonthSlider month={visibleMonth} />
+				<div className="header__content--left">
+					<div className="logoBox">
+						<IconLogoF className="icon--md" />
+					</div>
 				</div>
 			</div>
 		</header>
