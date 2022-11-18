@@ -37,23 +37,16 @@ const MainList: React.FC = () => {
 			<ul className={`mainList ${activeIndex !== null ? 'expand' : 'default'}`} onClick={handleOnClick}>
 				<div className="headerFillOut"></div>
 				{listItems.map((item, i) => {
-					let isYearBreak;
-					let isMonthBreak;
-					if (i === 0 || i === listItems.length - 1) {
-						isYearBreak = false;
-						isMonthBreak = false;
-					} else {
-						isYearBreak = item.year !== listItems[i - 1].year;
-						isMonthBreak = item.month !== listItems[i - 1].month;
-					}
+					const isYearBreak = i === 0 || item.year !== listItems[i - 1].year;
+					const isMonthBreak = i === 0 || item.month !== listItems[i - 1].month;
 					return (
 						<MainListItem
 							item={item}
 							index={i}
 							key={i}
 							parentRef={ref}
-							isMonthBreak={isMonthBreak}
 							isYearBreak={isYearBreak}
+							isMonthBreak={isMonthBreak}
 						/>
 					);
 				})}
