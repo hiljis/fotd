@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../../../../store/store';
+import { RootState, AppThunk } from '../../../store/store';
 
-export type Tab = 'info' | 'creator' | 'nft' | 'vote' | 'comment' | 'none';
+export type Tab = 'info' | 'creator' | 'nft' | 'vote' | 'comment' | 'none' | 'score';
 
 export interface ActiveContentState {
 	activeTab: Tab;
@@ -14,7 +14,7 @@ export interface ActiveContentState {
 const initialState: ActiveContentState = {
 	activeTab: 'none',
 	hasLikedImage: false,
-	hasVoted: false,
+	hasVoted: true,
 	status: 'idle',
 	error: '',
 };
@@ -39,5 +39,6 @@ export const { setActiveTab, setHasLikedImage, setHasVoted } = activeContentSlic
 
 export const selectActiveTab = (state: RootState) => state.activeContent.activeTab;
 export const selectHasLikedImage = (state: RootState) => state.activeContent.hasLikedImage;
+export const selectHasVoted = (state: RootState) => state.activeContent.hasVoted;
 
 export default activeContentSlice.reducer;

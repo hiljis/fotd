@@ -1,11 +1,9 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { Month, numToMonth, numToWeekDay } from '../../../utils/convert';
-import { ArtPost, selectActiveIndex, setVisiblePeriod } from '../store/mainListSlice';
-import DisplayImage from './DisplayImage/DisplayImage';
+import { useAppSelector } from '../../../store/hooks';
+import { numToMonth, numToWeekDay } from '../../../utils/convert';
+import { ArtPost, selectActiveIndex } from '../store/mainListSlice';
 import ExpandContent from './ExpandContent/ExpandContent';
 import './MainListItem.scss';
-import NavBar from './NavBar/NavBar';
 
 type Props = {
 	item: ArtPost;
@@ -22,28 +20,33 @@ const MainListItem: React.FC<Props> = ({ item, index, parentRef, isYearBreak, is
 	const monthDay = date.getDate().toString().padStart(2, '0');
 	const ref = useRef<HTMLDivElement>(null);
 	const [top, setTop] = useState(0);
+	const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
 	useEffect(() => {
 		if (ref && ref.current) {
-			if (isYearBreak || isMonthBreak) {
-				setTop(ref.current?.offsetTop / 10);
-			} else {
-				setTop(ref.current?.offsetTop / 10);
-			}
+			setTop(ref.current.offsetTop);
 		}
 	}, []);
 
 	useEffect(() => {
+		const handleOnResize = () => {
+			setDimensions({ width: window.innerWidth, height: window.innerHeight });
+		};
+
+		window.addEventListener('resize', handleOnResize);
+
+		return () => {
+			window.removeEventListener('resize', handleOnResize);
+		};
+	}, []);
+
+	useEffect(() => {
 		if (activeIndex === index && parentRef && parentRef.current) {
-			setTop(parentRef.current!.scrollTop / 10);
+			setTop(parentRef.current.scrollTop);
 		} else if (ref && ref.current) {
-			if (isYearBreak || isMonthBreak) {
-				setTop(ref.current?.offsetTop / 10);
-			} else {
-				setTop(ref.current?.offsetTop / 10);
-			}
+			setTop(ref.current.offsetTop);
 		}
-	}, [activeIndex]);
+	}, [activeIndex, dimensions, index, parentRef]);
 
 	return (
 		<Fragment>
@@ -56,10 +59,7 @@ const MainListItem: React.FC<Props> = ({ item, index, parentRef, isYearBreak, is
 				''
 			)}
 			<div ref={ref} className={`staticContainer ${activeIndex === index ? 'active' : ''}`}>
-				<div
-					className={`expandContainer ${activeIndex === index ? 'active' : ''}`}
-					style={{ top: `${top}rem` }}
-				>
+				<div className={`expandContainer ${activeIndex === index ? 'active' : ''}`} style={{ top: `${top}px` }}>
 					<li
 						className={`mainListItem ${activeIndex === index ? 'active' : 'inactive'}`}
 						data-index={index}
@@ -71,7 +71,7 @@ const MainListItem: React.FC<Props> = ({ item, index, parentRef, isYearBreak, is
 							<span className="mainListItem__date--monthDay">{monthDay}</span>
 						</div>
 					</li>
-					<ExpandContent />
+					{activeIndex === index ? <ExpandContent /> : ''}
 				</div>
 			</div>
 		</Fragment>

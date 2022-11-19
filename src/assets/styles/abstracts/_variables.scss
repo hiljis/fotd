@@ -1,15 +1,19 @@
 :root {
 	--c-dark: rgb(14, 14, 14);
 	--c-dark--light: #343434;
+	--c-dark--lighter: rgba(85, 85, 85, 1);
 	--c-light: rgb(237, 237, 237);
-	// --c-light: rgb(246, 246, 246);
 	--c-white: rgb(255, 255, 255);
 	--c-black: rgb(0, 0, 0);
-	--c-info: rgb(176, 159, 119);
+	--c-acc: rgb(176, 159, 119);
+	--c-acc--25: rgba(176, 159, 119, 0.25);
+	--c-acc--light: #e4e0d6;
 	--c-nft: rgb(255, 204, 77);
 
 	--header-height-mobile: 10rem;
 	--listItem-height-mobile: 12rem;
 
 	--f-family--primary: 'Poppins', sans-serif, -apple-system;
+
+	--r-round: 1000px;
 }

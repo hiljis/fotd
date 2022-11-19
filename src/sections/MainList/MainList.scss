@@ -5,7 +5,7 @@
 	top: 0;
 	left: 0;
 	overflow-y: scroll;
-	background-color: var(--c-light);
+	background-color: var(--c-acc--light);
 
 	&.no-scroll {
 		overflow-y: hidden;

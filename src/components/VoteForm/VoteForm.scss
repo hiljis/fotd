@@ -1,0 +1,56 @@
+.voteForm {
+	width: 100%;
+	background-color: var(--c-black);
+	border-top: 3px solid var(--c-black);
+
+	&__fieldset {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 5rem) 10rem;
+		row-gap: 3px;
+		column-gap: 3px;
+		border: none;
+	}
+
+	input[type='radio'] {
+		display: none;
+
+		&:checked + .checkLabel {
+			background-color: var(--c-acc);
+		}
+	}
+
+	.checkLabel {
+		font-weight: 600;
+		font-size: 2.4rem;
+		color: var(--c-dark);
+		background-color: var(--c-white);
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			background-color: var(--c-acc--light);
+		}
+	}
+
+	.submitVoteBtn {
+		grid-column: 1 / -1;
+		grid-row: 3 / -1;
+		background-color: var(--c-acc);
+		color: var(--c-dark);
+		width: 100%;
+		border: none;
+		font-size: 2.4rem;
+		font-weight: 700;
+
+		&.disabled {
+			background-color: var(--c-acc--light);
+			color: var(--c-acc);
+			pointer-events: none;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.contentComment {
+	width: 100%;
+	height: 100%;
+	padding: 3rem 2rem;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+	text-align: left;
+
+	background-color: var(--c-acc--light);
+	color: var(--c-dark);
+
+	&__header {
+		height: 6rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.commentList {
+	grid-column: left-start / right-end;
+
+	&__end {
+		font-size: 1.4rem;
+		font-weight: 500;
+		color: var(--c-acc);
+		text-align: center;
+	}
+}
+
+.contentComment {
+}
