@@ -2,24 +2,28 @@ import './DisplayImage.scss';
 import ImgACarson from '../../../../assets/testImages/artACarson.webp';
 import HeartBox from './HeartBox/HeartBox';
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
-import { selectHasLikedImage, setHasLikedImage } from '../ExpandContent/store/activeContentSlice';
+import { selectActiveTab, selectHasLikedImage, setActiveTab, setHasLikedImage } from '../../store/activeContentSlice';
 import { useState } from 'react';
 
 const DisplayImage: React.FC = () => {
 	const dispatch = useAppDispatch();
-	const hasLikedImage = useAppSelector(selectHasLikedImage);
 	const [doubleTapped, setDoubleTapped] = useState(false);
 
-	const handleDoubleClick = () => {
-		dispatch(setHasLikedImage(!hasLikedImage));
+	const handleOnDoubleClick = () => {
 		setDoubleTapped(true);
+		setTimeout(() => {
+			setDoubleTapped(false);
+		}, 800);
+	};
+
+	const handleOnClick = () => {
+		dispatch(setActiveTab('none'));
 	};
 
 	return (
-		<div className="displayImage__container" onDoubleClick={handleDoubleClick}>
+		<div className="displayImage__container" onDoubleClick={handleOnDoubleClick} onClick={handleOnClick}>
 			<img className="displayImage" src={ImgACarson} alt="ALT TEXT HERE" />
-			{hasLikedImage && doubleTapped ? <div className="dTBox">DOUBEL TAP</div> : ''}
-			<HeartBox isActive={hasLikedImage} />
+			<HeartBox doubleTapped={doubleTapped} />
 		</div>
 	);
 };

@@ -1,28 +1,48 @@
 import './HeartBox.scss';
 import { ReactComponent as IconHeart } from '../../../../../assets/icons/IconHeart.svg';
-import { useState } from 'react';
-import { useAppDispatch } from '../../../../../store/hooks';
-import { setHasLikedImage } from '../../ExpandContent/store/activeContentSlice';
+import { Fragment, useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../../../store/hooks';
+import { selectHasLikedImage, setHasLikedImage } from '../../../store/activeContentSlice';
 
 type Props = {
-	isActive: boolean;
+	doubleTapped: boolean;
 };
 
-const HeartBox: React.FC<Props> = ({ isActive }) => {
+const HeartBox: React.FC<Props> = ({ doubleTapped }) => {
 	const dispatch = useAppDispatch();
+	const hasLikedImage = useAppSelector(selectHasLikedImage);
 	const [count, setCount] = useState(999);
+	const [showAnimation, setShowAnimation] = useState(false);
 
-	const handleClick = () => {
-		if (isActive) setCount((prev) => prev - 1);
+	useEffect(() => {
+		if (doubleTapped && !hasLikedImage) {
+			dispatch(setHasLikedImage(true));
+			setCount((prev) => prev + 1);
+			setShowAnimation(true);
+		} else {
+			setShowAnimation(false);
+		}
+	}, [doubleTapped]);
+
+	const handleOnClick = () => {
+		if (hasLikedImage) setCount((prev) => prev - 1);
 		else setCount((prev) => prev + 1);
-		dispatch(setHasLikedImage(!isActive));
+		dispatch(setHasLikedImage(!hasLikedImage));
 	};
 
 	return (
-		<div className="heartBox" onClick={handleClick}>
-			<IconHeart className={`icon--sm ${isActive ? 'iconHeart--white' : 'iconHeart--red'}`} />
-			<span className="numLikes">{count}</span>
-		</div>
+		<Fragment>
+			<div className="heartBox">
+				<IconHeart
+					className={`icon--sm ${!hasLikedImage ? 'iconHeart--white' : 'iconHeart--red'}`}
+					onClick={handleOnClick}
+				/>
+				<span className="numLikes">{count}</span>
+			</div>
+			<div className={`doubleTapAnimate ${showAnimation ? 'show' : 'hide'}`}>
+				<IconHeart className={`iconHeart iconHeart--white`} />
+			</div>
+		</Fragment>
 	);
 };
 

@@ -1,0 +1,114 @@
+.headerCartoon__container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	&.size--32 {
+		width: 100%;
+		height: 12rem;
+
+		.headerCartoon--2 {
+			margin-top: -1rem;
+			margin-left: 7rem;
+		}
+	}
+
+	&.size--42 {
+		width: 100%;
+		height: 12rem;
+
+		.headerCartoon--2 {
+			margin-top: -2rem;
+			margin-left: 4rem;
+		}
+	}
+}
+
+.headerCartoon {
+	width: 100%;
+	// height: 100%;
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+
+	svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 8;
+		width: 100%;
+	}
+
+	svg.shadow {
+		position: absolute;
+		top: 0.6rem;
+		left: 0.6rem;
+		z-index: -1;
+	}
+
+	text {
+		paint-order: stroke fill;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 900;
+		fill: white;
+		stroke: black;
+		stroke-width: 4px;
+
+		&.shadow {
+			fill: black;
+		}
+
+		&.size--16 {
+			font-size: 1.6rem;
+			stroke-width: 3px;
+		}
+
+		&.size--24 {
+			font-size: 2.4rem;
+		}
+
+		&.size--32 {
+			font-size: 3.2rem;
+		}
+
+		&.size--42 {
+			font-size: 4.2rem;
+		}
+
+		&.size--64 {
+			font-size: 6.4rem;
+		}
+
+		&.size--128 {
+			font-size: 12.8rem;
+		}
+	}
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.size--16 {
+	height: 1.6rem;
+}
+
+.size--24 {
+	height: 2.4rem;
+}
+
+.size--32 {
+	height: 4.8rem;
+}
+
+.size--42 {
+	height: 6rem;
+}
+
+.size--64 {
+	height: 6.4rem;
+}
+
+.size--128 {
+	height: 12.8rem;
+}

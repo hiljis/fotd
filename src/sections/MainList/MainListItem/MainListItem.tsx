@@ -1,11 +1,9 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { Month, numToMonth, numToWeekDay } from '../../../utils/convert';
-import { ArtPost, selectActiveIndex, setVisiblePeriod } from '../store/mainListSlice';
-import DisplayImage from './DisplayImage/DisplayImage';
+import { useAppSelector } from '../../../store/hooks';
+import { numToMonth, numToWeekDay } from '../../../utils/convert';
+import { ArtPost, selectActiveIndex } from '../store/mainListSlice';
 import ExpandContent from './ExpandContent/ExpandContent';
 import './MainListItem.scss';
-import NavBar from './NavBar/NavBar';
 
 type Props = {
 	item: ArtPost;
@@ -71,7 +69,7 @@ const MainListItem: React.FC<Props> = ({ item, index, parentRef, isYearBreak, is
 							<span className="mainListItem__date--monthDay">{monthDay}</span>
 						</div>
 					</li>
-					<ExpandContent />
+					{activeIndex === index ? <ExpandContent /> : ''}
 				</div>
 			</div>
 		</Fragment>
